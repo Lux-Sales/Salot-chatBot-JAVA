@@ -1,10 +1,12 @@
-package com.salot.Salot.data;
+package com.salot.Salot.service;
 
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.SendMessage;
 import com.pengrad.telegrambot.response.SendResponse;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Disparador {
     public SendResponse disparador;
     public TelegramBot bot = new TelegramBot("1008391680:AAFYN-8r5GXY79bOTMT0NkR6w_pda-bv6pU");

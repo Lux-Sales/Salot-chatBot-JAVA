@@ -6,7 +6,7 @@ import com.pengrad.telegrambot.model.request.ChatAction;
 import com.pengrad.telegrambot.request.GetUpdates;
 import com.pengrad.telegrambot.request.SendChatAction;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
-import com.salot.Salot.data.Disparador;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +17,12 @@ public class BotService {
 
     TelegramBot bot;
     GetUpdatesResponse receptor;
+    @Autowired
+    Disparador disparador;
     int id = 0;
 
     public BotService() {
+
         this.bot = new TelegramBot("1008391680:AAFYN-8r5GXY79bOTMT0NkR6w_pda-bv6pU");
     }
 
@@ -28,7 +31,6 @@ public class BotService {
         // while (true) {
         receptor = bot.execute(new GetUpdates().limit(100).offset(id));
         List<Update> ListaDeMensagens = receptor.updates();
-        Disparador disparador = new Disparador();
 
         for (Update mensagens : ListaDeMensagens) {
             System.out.println(mensagens.message().text());
