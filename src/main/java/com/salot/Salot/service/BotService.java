@@ -8,10 +8,11 @@ import com.pengrad.telegrambot.request.SendChatAction;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
 import com.salot.Salot.data.Disparador;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 public class BotService {
 
     TelegramBot bot;
